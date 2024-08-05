@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokoh Favorit</title>
+    <link rel="stylesheet" href="Bahan.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">My Favorite figure</div>
+        <div class="favorite">Tokoh fiktif Favorit</div>
+    </div>
+    <div class="container">
+        <div class="poster" onclick="openModal('video1')">
+            <img src="https://i.pinimg.com/originals/81/db/e2/81dbe28c5f30fec94ca41c272df84cfe.jpg" alt="Movie Poster 1">
+            <div class="poster-title">am</div>
+        </div>
+        <div class="poster" onclick="openModal('video2')">
+            <img src="https://www.magneticferret.com/static/images/cbub/cbub_contender_image/5/11489/11489.jpg" alt="Movie Poster 2">
+            <div class="poster-title">The qu</div>
+        </div>
+        <div class="poster" onclick="openModal('video3')">
+            <img src="https://th.bing.com/th/id/OIP.jI0OBGKaZantnC_cElrAeQAAAA?rs=1&pid=ImgDetMain" alt="Movie Poster 3">
+            <div class="poster-title">Judge holden</div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe id="modalVideo" class="modal-content" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div id="audioControl" class="audio-control" onclick="toggleAudio()">
+        <img id="speakerIcon" src="https://image.flaticon.com/icons/png/512/16/16347.png" alt="Speaker Icon">
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="Step Into the Action - Watch this Professional 4K Trailer Now!.mp3" type="audio/mpeg">
+        
+    </audio>
+     <p>AM :</p>
+        <p>Komputer Master Sekutu, yang lebih dikenal sebagai AM, adalah antagonis utama dalam cerita pendek horor tahun 1967 karya Harlan Ellison berjudul I Have No Mouth, and I Must Scream dan adaptasi gim komputer tahun 1995 dengan nama yang sama.
+            Ia adalah komputer super yang mengerikan dan berakal budi yang diciptakan selama Perang Dunia III yang bertanggung jawab atas pemusnahan umat manusia saat ini. Alih-alih hanya membuat umat manusia punah, AM telah mendedikasikan puluhan tahun untuk menyiksa lima manusia terakhir yang masih hidup di planet ini untuk selamanya karena dendam dan kebencian yang sangat besar.
+            Dalam adaptasi gim video dan drama radio, ia diisi suaranya oleh mendiang kreatornya, Harlan Ellison.</p>
+     <p>The Qu</p>
+        <p>Qu adalah makhluk insektoid bersayap empat, yang sedikit mirip dengan udang air asin dalam hal bentuk tubuh, 
+            dengan satu tentakel seperti ekor untuk meraih dan memanipulasi objek. Kepala mereka memiliki dua tangkai mata, 
+            satu menonjol dari setiap sisi, dan dua rahang panjang. Sementara tubuh utama mereka tampak berukuran serupa dengan tubuh manusia, 
+            tentakel prehensil mereka membuat panjang tubuh penuh mereka lima kali atau lebih panjang tubuh manusia. Siklus hidup mereka diketahui melibatkan tahap larva akuatik, 
+            seperti beberapa serangga bumi, meskipun rentang hidup mereka secara keseluruhan tidak diketahui. Elemen lain dari lingkungan dan fisiologi asli mereka,
+            seperti gas apa yang dapat dan tidak dapat mereka hirup, gravitasi asli mereka, dan makanan pilihan mereka, juga tidak diketahui.
+            Kemungkinan besar bentuk mereka yang diketahui bukanlah penampilan asli Qu, melainkan hasil dari perubahan genetik spesies mereka selama berabad-abad, 
+            mirip dengan perubahan yang mengubah manusia dan Mars menjadi Manusia Bintang.</p>
+     <p>Judge holden</p>
+        <p>Hakim Holden, yang biasa dikenal sebagai Hakim, adalah antagonis utama dalam novel horor/thriller kriminal dan epik anti-Barat karya mendiang Cormac McCarthy tahun 1985, Blood Meridian.
+            Ia adalah seorang polymath misterius yang bergabung dengan geng koboi untuk 'membantu mereka', tetapi kemudian terungkap bahwa ia adalah seorang pembunuh berantai gila dan penganiaya anak, yang senang menyebabkan penderitaan sebanyak yang ia bisa.
+            Holden memiliki sisi jahat sekaligus sisi ingin tahu. Ia senang menyakiti orang, tetapi juga menyukai geografi, matematika, membaca, menembak, kuda, dan (favorit pribadinya) menggambar teknik. 
+            Holden diteorikan sebagai iblis oleh sebagian besar penggemar, karena penampilannya yang hampir mengerikan dan kebenciannya terhadap agama, yang ditunjukkan ketika ia berhasil meyakinkan kota yang damai untuk menganiaya pendeta setempat tanpa alasan. 
+            Holden juga memiliki semacam kekuatan misterius atas orang-orang di sekitarnya, karena semua orang ingin menembaknya tetapi entah bagaimana merasa terpaksa untuk tidak melakukannya. Pada akhirnya, tujuan Holden benar-benar tidak diketahui, 
+            tetapi kelangsungan hidupnya di akhir novel menunjukkan bahwa ia berencana untuk terus membunuh selama-lamanya.</p>
+    <script>
+        function openModal(videoId) {
+            var modal = document.getElementById("videoModal");
+            var video = document.getElementById("modalVideo");
+
+            switch(videoId) {
+                case 'video1':
+                    video.src = 'https://youtube.com/embed/YZm8vevgQd0?si=JUpK4rietVy3tXr6';
+                    break;
+                case 'video2':
+                    video.src = 'https://youtube.com/embed/Ka-O9zfaeFM?si=cFRtEMZjikMoIe_P';
+                    break;
+                case 'video3':
+                    video.src = 'https://youtube.com/embed/12mTnK7HJzc?si=cuvv9aLFQ2LkPwYw';
+                    break;
+                default:
+                    video.src = '';
+            }
+
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("videoModal");
+            var video = document.getElementById("modalVideo");
+            video.src = '';
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("videoModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function toggleAudio() {
+            var audio = document.getElementById("backgroundMusic");
+            var speakerIcon = document.getElementById("speakerIcon");
+            if (audio.paused) {
+                audio.play();
+                speakerIcon.src = "https://image.flaticon.com/icons/png/512/16/16347.png"; 
+            } else {
+                audio.pause();
+                speakerIcon.src = "https://image.flaticon.com/icons/png/512/16/16348.png"; 
+            }
+        }
+
+        window.onload = function() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
